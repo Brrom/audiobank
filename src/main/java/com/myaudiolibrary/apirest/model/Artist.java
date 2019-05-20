@@ -3,6 +3,7 @@ package com.myaudiolibrary.apirest.model;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 import java.util.List;
 
 @Entity
@@ -15,6 +16,7 @@ public class Artist {
     @Column(name = "ArtistId")
     private Long id;
 
+    @NotNull
     @Column(name = "Name")
     private String name;
 

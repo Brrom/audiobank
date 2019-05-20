@@ -6,6 +6,7 @@ import com.myaudiolibrary.apirest.service.ArtistService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
 import javax.persistence.EntityNotFoundException;
@@ -21,7 +22,7 @@ public class ArtistController {
 
     //TODO Question 1 Display Artist
 
-    @RequestMapping(value = "/{id}", method = RequestMethod.GET, produces = "application/json")
+    @RequestMapping(value = "/{id}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
     public Artist findArtist(@PathVariable(value = "id") Long id) throws EntityNotFoundException {
 
         return artistService.findById(id);
@@ -47,7 +48,7 @@ public class ArtistController {
 
     //TODO Question 4 Create Artist
 
-    @RequestMapping(value = "", method = RequestMethod.POST, consumes = "application/json", produces = "application/json")
+    @RequestMapping(value = "", method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_UTF8_VALUE, produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
     public Artist addArtist(@RequestBody Artist artist) throws DoublonException {
 
         return artistService.addArtist(artist);
@@ -55,7 +56,7 @@ public class ArtistController {
 
     //TODO Question 5 Modify Artist
 
-    @RequestMapping(value = "/{id}", method = RequestMethod.PUT, consumes = "application/json", produces = "application/json")
+    @RequestMapping(value = "/{id}", method = RequestMethod.PUT, consumes = MediaType.APPLICATION_JSON_UTF8_VALUE, produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
     public Artist modifArtist(@PathVariable(value = "id") Long id, @RequestBody Artist artist) {
 
         return artistService.modifArtist(id, artist);

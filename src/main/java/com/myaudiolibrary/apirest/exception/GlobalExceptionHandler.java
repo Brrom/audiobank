@@ -20,4 +20,21 @@ public class GlobalExceptionHandler {
 
         return entityNotFoundException.getMessage();
     }
+
+    @ExceptionHandler(IllegalArgumentException.class)
+    @ResponseBody
+    @ResponseStatus(HttpStatus.BAD_REQUEST)
+    public String handleEntityNotFoundException(IllegalArgumentException illegalArgumentException) {
+
+        return illegalArgumentException.getMessage();
+    }
+
+    @ExceptionHandler(DoublonException.class)
+    @ResponseBody
+    @ResponseStatus(HttpStatus.CONFLICT)
+    public String handleEntityNotFoundException(DoublonException artistName) {
+
+        return artistName.getMessage();
+    }
+
 }
