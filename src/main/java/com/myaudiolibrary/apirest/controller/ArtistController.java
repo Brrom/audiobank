@@ -30,8 +30,7 @@ public class ArtistController {
     //TODO Question 2 Find By Name
 
     @RequestMapping(params = "name")
-    public List<Artist> findByName(@RequestParam("name") String name) throws EntityNotFoundException {
-
+    public List<Artist> artists(@RequestParam(value="name") String name)throws Exception {
         return artistService.findByName(name);
     }
 

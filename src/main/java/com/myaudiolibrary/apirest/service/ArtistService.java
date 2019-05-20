@@ -31,12 +31,9 @@ public class ArtistService {
 
     //TODO Question 2 Find By Name
 
-    public List<Artist> findByName(String name) {
-        List<Artist> findByName = new ArrayList();
-        if (findByName.contains(name)) {
-            return findByName;
-        }
-        return null;
+    public List<Artist> findByName(String name) throws Exception{
+
+        return artistRepository.findByNameContaining(name);
     }
 
     //TODO Question 3 Display List
