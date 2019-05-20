@@ -37,7 +37,7 @@ public class ArtistController {
 
     //TODO Question 3 Display List
 
-    @RequestMapping(params = "name")
+    @RequestMapping()
     public Page<Artist> ListName(@RequestParam(value = "page") Integer page,
                                  @RequestParam(value = "size") Integer size,
                                  @RequestParam(value = "sortDirection") String sortDirection,
